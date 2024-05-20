@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import UseRefComponent from './UseRef';
 
 export default function Home() {
@@ -12,6 +12,7 @@ export default function Home() {
 
   const aUsefulCallback = () => {};
   const memoizedCallback = useCallback(aUsefulCallback, []);
+  // const memoizedCB = useMemo(() => aUsefulCallback, []) // Essentially the same thing as useCallBack
 
   return (
     <div>

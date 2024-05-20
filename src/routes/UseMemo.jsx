@@ -2,7 +2,7 @@ import { useEffect, useState, useMemo } from 'react';
 import expensiveMathOperation from './expensiveMathOperation';
 
 export default function Home() {
-  const [count, setCount] = useState(35);
+  const [count, setCount] = useState(1);
   const [left, setLeft] = useState(0);
   const value = useMemo(() => expensiveMathOperation(count), [count]);
 

@@ -1,7 +1,12 @@
 import { useId } from 'react';
 
 function LabelInputPair() {
-  const id = useId();
+  const id = useId(); 
+  /**
+   * Use case: design system - fancy inputs with labels, input 
+   * useId creates unique id that instantiation per component is consistent
+   * don't use multiple useId, just do some thing like id + '-key'
+   */
   return (
     <div style={{ marginBottom: '50px' }}>
       <label htmlFor={id}>

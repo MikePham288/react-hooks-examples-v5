@@ -5,7 +5,10 @@ const LayoutEffectComponent = () => {
   const [height, setHeight] = useState(0);
   const el = useRef();
 
-  useLayoutEffect(() => {
+  /**
+   * The reason useLayoutEffect is better is because useEffect renders twice, which creates a ghostly jump
+   */
+  useLayoutEffect(() => { 
     setWidth(el.current.clientWidth);
     setHeight(el.current.clientHeight);
   });
