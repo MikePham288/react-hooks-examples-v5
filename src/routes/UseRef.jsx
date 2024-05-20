@@ -3,6 +3,15 @@ import * as THREE from 'three';
 
 const UseRefMemo = memo(function UseRef() {
   const renderTarget = useRef();
+  /**
+   * why use ref?
+   * if I provide the exact same props, it won't re-render. Why is that a problem? because we have this application here
+   * if it rerenders, then it will destroy the scene and rerender it. But we want to keep the scene up there, 
+   * 1. it's expensive to re-render
+   * 2. it's janky.
+   * => using Memp is good because it guarantee that as the props is being passed into useRef, 
+   * memo component don't change, it doesn't just re-render
+   */
 
   useEffect(() => {
     let continueRendering = true;
